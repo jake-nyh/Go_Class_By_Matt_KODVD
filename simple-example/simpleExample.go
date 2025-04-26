@@ -5,8 +5,8 @@ import (
 	"os"
 )
 
-func Say(name string) {
-	fmt.Printf("Hello %s\n", name)
+func Say(name string) string {
+	return fmt.Sprintf("Hello, %s", name)
 }
 
 func SimpleExample() {
