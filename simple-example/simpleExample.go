@@ -3,18 +3,17 @@ package simpleExample
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
-func Say(name string) string {
-	return fmt.Sprintf("Hello, %s", name)
+func Say(names []string) string {
+	if len(names) == 0 {
+		names = []string{"world"}
+	}
+
+	return "Hello, " + strings.Join(names, ", ")
 }
 
 func SimpleExample() {
-
-	if len(os.Args) > 1 {
-		Say(os.Args[1])
-	} else {
-		Say("world")
-	}
-
+	fmt.Println(Say(os.Args[1:]))
 }
